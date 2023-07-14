@@ -17,7 +17,10 @@
     <nz-form-item>
       <nz-form-label [nzSpan]="7" nzRequired>Gender</nz-form-label>
       <nz-form-control [nzSpan]="12">
-        <input formControlName="gender" nz-input placeholder="Gender" />
+        <nz-select formControlName="gender">
+          <nz-option nzValue="male" nzLabel="Male"></nz-option>
+          <nz-option nzValue="female" nzLabel="Female"></nz-option>
+        </nz-select>
       </nz-form-control>
     </nz-form-item>
   

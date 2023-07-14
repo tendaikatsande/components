@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { PatientVisitsService } from 'src/app/services/patient-visits.service';
+import { VitalsService } from 'src/app/services/vitals.service';
 
 @Component({
   selector: 'app-record-vitals',
@@ -14,7 +14,7 @@ export class RecordVitalsComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private patientVitalsService: PatientVisitsService,
+    private vitalService: VitalsService,
     private notification: NzNotificationService,
     private drawerRef: NzDrawerRef
   ) {}
@@ -30,7 +30,7 @@ export class RecordVitalsComponent implements OnInit {
   }
 
   submitForm(): void {
-    this.patientVitalsService.create(this.validateForm.value).subscribe({
+    this.vitalService.create(this.validateForm.value).subscribe({
       next: (data) => {
         this.notification.success(
           'Success', // these are the title

@@ -24,6 +24,8 @@ export class RecordVisitComponent implements OnInit {
       visitDate: [null, [Validators.required]],
       visitReason: [null, [Validators.required]],
       visitDuration: [null, [Validators.required]],
+      vitals: []
+
     });
     console.log(this.patient)
   }
