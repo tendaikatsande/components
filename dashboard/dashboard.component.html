@@ -1,0 +1,117 @@
+<nz-row [nzGutter]="16">
+  <form [formGroup]="form" class="flex gap-4">
+    <nz-date-picker
+      formControlName="as_at"
+      [nzDisabledDate]="disabledDate"
+    ></nz-date-picker>
+  
+    <button
+      nz-button
+      nzType="primary"
+      [disabled]="form.invalid"
+      [nzLoading]="loading"
+      (click)="handleDateChange()"
+    >
+      <i nz-icon nzType="search"></i> Search
+    </button>
+  </form>
+</nz-row>
+<nz-row [nzGutter]="16">
+  <nz-col [nzSpan]="4">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="dashboardStats.grandTotal"
+        [nzTitle]="'Total Vital Checks'"
+        [nzPrefix]="prefixTplOne"
+        [nzValueStyle]="{ color: '#3F8600' }"
+      ></nz-statistic>
+      <ng-template #prefixTplOne
+        ><span nz-icon nzType="user"></span
+      ></ng-template>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="4">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="dashboardStats.screened"
+        [nzTitle]="'Total Screened'"
+        [nzPrefix]="prefixTplTwo"
+        [nzValueStyle]="{ color: '#CF1322' }"
+      ></nz-statistic>
+      <ng-template #prefixTplTwo
+        ><span nz-icon nzType="arrow-down"></span
+      ></ng-template>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="4">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="dashboardStats.pending"
+        [nzTitle]="'Pending Screening'"
+        [nzPrefix]="prefixTplOne"
+        [nzValueStyle]="{ color: '#3F8600' }"
+      ></nz-statistic>
+      <ng-template #prefixTplOne
+        ><span nz-icon nzType="arrow-up"></span
+      ></ng-template>
+    </nz-card>
+  </nz-col>
+</nz-row>
+
+<nz-row [nzGutter]="16">
+  <nz-col [nzSpan]="2">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="dashboardStats.normal"
+        [nzTitle]="'Normal HBP'"
+        [nzPrefix]="prefixTplOne"
+        [nzValueStyle]="{ color: '#3F8600' }"
+      ></nz-statistic>
+    </nz-card>
+  </nz-col>
+
+  <nz-col [nzSpan]="2">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="dashboardStats.elevated"
+        [nzTitle]="'Elevated HBP'"
+        [nzPrefix]="prefixTplOne"
+        [nzValueStyle]="{ color: '#3F8600' }"
+      ></nz-statistic>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="2">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="dashboardStats.hcrisis"
+        [nzTitle]="'Crisis HBP'"
+        [nzPrefix]="prefixTplOne"
+        [nzValueStyle]="{ color: '#3F8600' }"
+      ></nz-statistic>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="2">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="dashboardStats.hs1"
+        [nzTitle]="'HS1 HBP'"
+        [nzPrefix]="prefixTplOne"
+        [nzValueStyle]="{ color: '#3F8600' }"
+      ></nz-statistic>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="2">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="dashboardStats.hs2"
+        [nzTitle]="'HS2 HBP'"
+        [nzPrefix]="prefixTplOne"
+        [nzValueStyle]="{ color: '#3F8600' }"
+      ></nz-statistic>
+    </nz-card>
+  </nz-col>
+
+  <ng-template #prefixTplOne
+    ><span nz-icon nzType="arrow-up"></span
+  ></ng-template>
+</nz-row>

@@ -1,0 +1,41 @@
+<nz-card>
+  <nz-card-meta
+    nzTitle="{{ patient.name }}"
+    nzDescription="ID: {{ patient.id }}"
+  ></nz-card-meta>
+  <nz-card-meta nzDescription="Age: {{ patient.age }}"></nz-card-meta>
+  <nz-card-meta nzDescription="Gender: {{ patient.gender }}"></nz-card-meta>
+  <nz-card-meta
+    nzDescription="Contact Information: {{ patient.contactInformation }}"
+  ></nz-card-meta>
+  <nz-card-meta
+    nzDescription="Insurance Details: {{ patient.insuranceDetails }}"
+  ></nz-card-meta>
+  <nz-card-meta
+    nzDescription="Medical History: {{ patient.medicalHistory }}"
+  ></nz-card-meta>
+</nz-card>
+
+<nz-card>
+  <nz-card-meta
+    nzTitle="Visits"
+    nzDescription="Visits made by patient"
+  ></nz-card-meta>
+
+  <nz-list [nzDataSource]="patient.visits" [nzRenderItem]="item">
+    <ng-template #item let-item>
+      <nz-list-item>
+        <nz-list-item-meta
+          [nzTitle]="item.patient.name"
+          [nzDescription]="item.visitDate"
+        ></nz-list-item-meta>
+        <nz-list-item-meta
+          [nzDescription]="item.visitReason"
+        ></nz-list-item-meta>
+        <nz-list-item-meta
+          [nzDescription]="item.visitDuration + ' minutes'"
+        ></nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+</nz-card>

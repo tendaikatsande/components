@@ -1,0 +1,25 @@
+<div class="">
+  <button nz-button nzType="primary" (click)="addPatient()">Add Patient</button>
+</div>
+<nz-table #basicTable [nzData]="patients">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.name }}</td>
+      <td>{{ data.age }}</td>
+      <td>{{ data.gender }}</td>
+      <td>
+        <a (click)="recordVisit(data)">record visit</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a (click)="viewPatient(data)">view</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

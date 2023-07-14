@@ -1,0 +1,52 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Name</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="name" nz-input placeholder="Name" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Age</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="age" nz-input placeholder="Age" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Gender</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="gender" nz-input placeholder="Gender" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Contact Information</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="contactInformation" nz-input placeholder="Contact Information" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Insurance Details</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="insuranceDetails" nz-input placeholder="Insurance Details" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Medical History</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="medicalHistory" nz-input placeholder="Medical History" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-control [nzOffset]="7" [nzSpan]="10">
+        <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
+      </nz-form-control>
+    </nz-form-item>
+    
+  </form>
+  

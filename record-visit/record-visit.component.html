@@ -1,0 +1,41 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Visit Date</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <nz-date-picker
+        formControlName="visitDate"
+        [nzDisabledDate]="disabledDate"
+      ></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Visit Reason</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input
+        formControlName="visitReason"
+        nz-input
+        placeholder="Visit Reason"
+      />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Visit Duration</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input
+        formControlName="visitDuration"
+        nz-input
+        placeholder="Visit Duration"
+      />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control [nzOffset]="7" [nzSpan]="10">
+      <button nz-button nzType="primary" [disabled]="!validateForm.valid">
+        Submit
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

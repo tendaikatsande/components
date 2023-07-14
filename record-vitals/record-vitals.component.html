@@ -1,0 +1,45 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Blood Pressure</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="bloodPressure" nz-input placeholder="Blood Pressure" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Body Temperature</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="bodyTemperature" nz-input placeholder="Body Temperature" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Heart Rate</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="heartRate" nz-input placeholder="Heart Rate" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Weight</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="weight" nz-input placeholder="Weight" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Height</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input formControlName="height" nz-input placeholder="Height" />
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-control [nzOffset]="7" [nzSpan]="10">
+        <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
+      </nz-form-control>
+    </nz-form-item>
+    
+  </form>
+  
